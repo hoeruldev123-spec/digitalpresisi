@@ -468,7 +468,7 @@
                   menghadirkan hasil optimal, efisien, dan sesuai dengan
                   harapan.
                 </p>
-                <a href="#" class="btn more-btn">Selengkapnya</a>
+                <!-- <a href="#" class="btn more-btn">Selengkapnya</a> -->
               </div>
             </div>
           </div>
@@ -503,7 +503,7 @@
                   </li>
                 </ul>
                 <p></p>
-                <a href="#" class="btn more-btn">Selengkapnya</a>
+                <!-- <a href="#" class="btn more-btn">Selengkapnya</a> -->
               </div>
             </div>
 
@@ -543,9 +543,9 @@
                     Pembuatan website berkualitas tinggi dengan desain yang
                     menarik dan fungsionalitas yang optimal.
                   </p>
-                  <a href="#" class="read-more stretched-link"
+                  <!-- <a href="#" class="read-more stretched-link"
                     >Selengkapnya <i class="bi bi-arrow-right"></i
-                  ></a>
+                  ></a> -->
                 </div>
               </div>
             </div>
@@ -1206,43 +1206,23 @@
           </div>
 
           <div class="row gy-4 mt-1">
-            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
-             <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15866.183740064338!2d106.7507083!3d-6.1914568!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f713aa938351%3A0xb954ba68e2257024!2sRukan%20Grand%20Aries%20Niaga%2C%20Jl.%20Taman%20Aries%2C%20RT.12%2FRW.3%2C%20Meruya%20Utara%2C%20Kec.%20Kembangan%2C%20Kota%20Jakarta%20Barat%2C%20Daerah%20Khusus%20Ibukota%20Jakarta%2011620!5e0!3m2!1sid!2sid!4v1731076506121!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-            <!-- End Google Maps -->
-            
-                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
-                  <form action="https://formsubmit.co/hoerul.dev123@gmail.com" method="POST">
-                      <!-- Honeypot dan pengaturan formsubmit -->
-                      <input type="text" name="honeypot" style="display: none" />
-                      <input type="hidden" name="_captcha" value="false" />
-                      <input type="hidden" name="_next" value="https://digitalpresisi.site/thanks.html" />
-        
-                      <div class="row g-3">
-                        <div class="col-md-6">
-                              <input type="text" name="name" class="form-control" placeholder="Nama Anda" required />
-                            </div>
-            
-                            <div class="col-md-6">
-                              <input type="email" class="form-control" name="email" placeholder="Email" required />
-                            </div>
-            
-                            <div class="col-12">
-                              <input type="text" class="form-control" name="subject" placeholder="Subject" required />
-                            </div>
-            
-                            <div class="col-12">
-                              <textarea class="form-control" name="message" rows="6" placeholder="Isi Pesan" required></textarea>
-                            </div>
-            
-                            <div class="col-12 text-center">
-                              <button type="submit" class="btn btn-primary px-5 mt-3">Kirim Pesan</button>
-                            </div>
-                    </div>
-                </form>
-            </div>
-            <!-- End Contact Form -->
-          </div>
+  <!-- Google Maps dengan Bootstrap Ratio -->
+  <div class="col-12" data-aos="fade-up" data-aos-delay="300">
+    <div class="map-wrapper">
+      <div class="ratio ratio-21x9 rounded-4 overflow-hidden shadow-lg">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15866.183740064338!2d106.7507083!3d-6.1914568!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f713aa938351%3A0xb954ba68e2257024!2sRukan%20Grand%20Aries%20Niaga%2C%20Jl.%20Taman%20Aries%2C%20RT.12%2FRW.3%2C%20Meruya%20Utara%2C%20Kec.%20Kembangan%2C%20Kota%20Jakarta%20Barat%2C%20Daerah%20Khusus%20Ibukota%20Jakarta%2011620!5e0!3m2!1sid!2sid!4v1731076506121!5m2!1sid!2sid" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Lokasi Digital Presisi">
+        </iframe>
+      </div>
+    </div>
+  </div>
+  <!-- End Google Maps -->
+</div>
         </div>
       </section>
       <!-- /Contact Section -->
@@ -1290,24 +1270,9 @@
             <p>
               Dapatkan berbagai artikel terbaru langsung ke kotak masuk Anda!
             </p>
-            <form
-              action="forms/newsletter.php"
-              method="post"
-              class="php-email-form"
-            >
-              <div class="newsletter-form">
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="email anda"
-                /><input type="submit" value="Subscribe" />
-              </div>
-              <div class="loading">Loading</div>
-              <div class="error-message"></div>
-              <div class="sent-message">
-                Permintaan Langganan Artikel Anda Telah Terkirim. Terima Kasih!
-              </div>
-            </form>
+            <ul>
+              <li><a href="/blog">Blog</a></li>
+            </ul>
           </div>
         </div>
       </div>

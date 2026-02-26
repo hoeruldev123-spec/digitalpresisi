@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Adinda Paramitha - Profile</title>
+    <title>Amanda Paramitha - Profile</title>
     <meta content="" name="description" />
     <meta content="" name="keywords" />
 
@@ -30,7 +30,7 @@
     <link href="assets/css/profile.css" rel="stylesheet" />
 
     <!-- =======================================================
-  * Nama Saya Adinda Paramitha
+  * Nama Saya Amanda Paramitha
   * Bekerja dan Kuliah
   * Domisili Jakarta
   * 
@@ -42,20 +42,17 @@
       <i class="header-toggle d-xl-none bi bi-list"></i>
 
       <div class="profile-img">
-        <img src="assets/img/team/adinda-1x1.jpg" alt="" class="img-fluid rounded-circle" />
+        <img src="assets/img/team/amanda-1x1.jpg" alt="" class="img-fluid rounded-circle" />
       </div>
 
       <a href="index.html" class="logo d-flex align-items-center justify-content-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <!-- <img src="assets/img/logo.png" alt=""> -->
-        <h1 class="sitename">Adinda Paramitha</h1>
+        <h1 class="sitename">Amanda Paramitha</h1>
       </a>
 
       <div class="social-links text-center">
-        <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
-        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+        <a href="https://www.linkedin.com/in/amanda-paramitha-manda" target="_blank" rel="noopener noreferrer" title="Kunjungi Instagram"><i class="bi bi-linkedin"></i></a>
       </div>
 
       <nav id="navmenu" class="navmenu">
@@ -77,9 +74,9 @@
     <main class="main">
       <!-- Hero Section -->
       <section id="hero" class="hero section dark-background">
-        <img src="assets/img/team/adinda-2.webp" class="flip-horizontal" alt="Gambar Terbalik" />
+        <img src="assets/img/team/amanda-2.webp" class="flip-horizontal" alt="Gambar Terbalik" />
         <div class="container" data-aos="fade-up" data-aos-delay="100">
-          <h2>Adinda Paramitha</h2>
+          <h2>Amanda Paramitha</h2>
           <p>
             I'm <span class="typed" data-typed-items="Brand Strategy &amp; Positioning, Content Marketing &amp; Storytelling,Community Building &amp; Social Media Strategy, Customer Experience &amp; Engagement, Freelancer"> </span
             ><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span>
@@ -103,12 +100,12 @@
         <div class="container" data-aos="fade-up">
           <div class="row gy-4 justify-content-center">
             <div class="col-lg-4">
-              <img src="assets/img/team/adinda-about.jpg" class="img-fluid rounded-3" alt="" />
+              <img src="assets/img/team/amanda-about.jpg" class="img-fluid rounded-3" alt="" />
             </div>
             <div class="col-lg-8 content">
               <div class="container">
                 <h2>
-                  Adinda Paramitha |
+                  Amanda Paramitha |
                   <span class="typed" data-typed-items="Brand Strategy &amp; Positioning, Content Marketing &amp; Storytelling,Community Building &amp; Social Media Strategy, Customer Experience &amp; Engagement, Freelancer"> </span>
                 </h2>
               </div>
@@ -122,16 +119,16 @@
                 <div class="col-lg-6">
                   <ul>
                     <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>13 Marh 1998</span></li>
-                    <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong> <span>www.digitalpresisi.com</span></li>
+                    <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong> <span>www.digitalpresisi.site</span></li>
                     <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>+6289655930890</span></li>
                     <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>Jakarta, Indonesia</span></li>
                   </ul>
                 </div>
                 <div class="col-lg-6">
                   <ul>
-                    <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>27</span></li>
+                    <li><i class="bi bi-chevron-right"></i><strong>Age:</strong><span id="age-display"></span></li>
                     <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>S1 Manajemen Pemasaran</span></li>
-                    <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>adinda.paramitha@digitalpresisi.site</span></li>
+                    <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>amanda.paramitha@digitalpresisi.site</span></li>
                     <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong> <span>Available</span></li>
                   </ul>
                 </div>
@@ -188,11 +185,11 @@
 
               <div class="resume-item pb-0">
                 <h4>Digital Presisi</h4>
-                <p><em>Saya adalah pendiri DigitalPresisi.com, sebuah platform yang menyediakan layanan Web Development, Digital Marketing, dan Graphic Design.</em></p>
+                <p><em>Saya adalah bagian dari DigitalPresisi.site, sebuah platform yang menyediakan layanan Web Development, Digital Marketing, dan Graphic Design.</em></p>
                 <ul>
                   <li>Jakarta, indonesia</li>
                   <li>(021) 456-7891</li>
-                  <li>info@digitalpresisi.com</li>
+                  <li>info@digitalpresisi.site</li>
                 </ul>
               </div>
               <!-- Edn Resume Item -->
@@ -266,6 +263,17 @@
 
     <!-- Preloader -->
     <div id="preloader"></div>
+
+    <script>
+  // Hitung umur berdasarkan tahun kelahiran 1998
+  function calculateAge(birthYear) {
+    const currentYear = new Date().getFullYear();
+    return currentYear - birthYear;
+  }
+
+  // Tampilkan umur
+  document.getElementById('age-display').textContent = calculateAge(1998);
+</script>
 
     <!-- Vendor JS Files -->
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
