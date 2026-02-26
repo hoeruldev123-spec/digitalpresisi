@@ -1,0 +1,144 @@
+/*--------------------------------------------------------------
+# tim Section
+--------------------------------------------------------------*/
+.tim .container .tim-member {
+  background-color: var(--surface-color);
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  position: relative;
+  border-radius: 5px;
+  transition: 0.5s;
+  padding: 30px;
+  height: 100%;
+}
+
+@media (max-width: 468px) {
+  .tim .tim-member {
+    flex-direction: column;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+}
+
+.tim .container .tim-member .pic {
+  width: 150px; /* Lebar tetap 150px */
+  height: 200px; /* Tinggi dibuat sama agar 1:1 */
+  border-radius: 10px; /* Tetap dengan border radius 10px */
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tim .tim-member .pic img {
+  transition: ease-in-out 0.3s;
+  width: 100%; /* Gambar memenuhi kotak */
+  height: 100%;
+  object-fit: cover; /* Mencegah distorsi, gambar akan dipotong agar tetap 1:1 */
+}
+
+.tim .tim-member:hover {
+  transform: translateY(-10px);
+}
+
+.tim .tim-member .member-info {
+  padding-left: 30px;
+}
+
+@media (max-width: 468px) {
+  .tim .tim-member .member-info {
+    padding: 30px 0 0 0;
+    text-align: center;
+  }
+}
+
+.tim .tim-member h4 {
+  font-weight: 700;
+  margin-bottom: 5px;
+  font-size: 20px;
+}
+
+.tim .tim-member span {
+  display: block;
+  font-size: 15px;
+  padding-bottom: 10px;
+  position: relative;
+  font-weight: 500;
+}
+
+.tim .tim-member span::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 50px;
+  height: 1px;
+  background: color-mix(in srgb, var(--default-color), transparent 85%);
+  bottom: 0;
+  left: 0;
+}
+
+.tim .tim-member .read-more {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 10px;
+  transition: 0.3s;
+  font-size: 14px;
+}
+
+.tim .tim-member .read-more i {
+  margin-left: 10px;
+}
+
+@media (max-width: 468px) {
+  .tim .tim-member span::after {
+    left: calc(50% - 25px);
+  }
+}
+
+.tim .tim-member p {
+  margin: 10px 0 0 0;
+  font-size: 14px;
+}
+
+.tim .tim-member .social {
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  width: 100%;
+}
+
+@media (max-width: 468px) {
+  .tim .tim-member .social {
+    justify-content: center;
+  }
+}
+
+.tim .tim-member .social a {
+  background: color-mix(in srgb, var(--default-color), transparent 94%);
+  transition: ease-in-out 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+  width: 36px;
+  height: 36px;
+}
+
+.tim .tim-member .social a i {
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  font-size: 16px;
+  margin: 0 2px;
+}
+
+.tim .tim-member .social a:hover {
+  background: var(--accent-color);
+}
+
+.tim .tim-member .social a:hover i {
+  color: var(--contrast-color);
+}
+
+.tim .tim-member .social a + a {
+  margin-left: 8px;
+}

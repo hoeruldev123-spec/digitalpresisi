@@ -1,0 +1,27 @@
+User-agent: *
+Disallow: /wp-admin/
+Disallow: /wp-includes/
+Disallow: /cgi-bin/
+Disallow: /*.pdf$
+Disallow: /*.zip$
+Disallow: /*.rar$
+Disallow: /*.tar.gz$
+Disallow: /private/
+Disallow: /temp/
+Allow: /wp-admin/admin-ajax.php
+
+# Optional: blok bot tertentu yang dianggap spammy
+User-agent: Yandex
+Disallow: /
+
+User-agent: Baiduspider
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+# Sitemap utama WordPress (jika pakai RankMath atau Yoast)
+Sitemap: https://digitalpresisi.site/blog/sitemap_index.xml
+
+# Sitemap manual halaman statis (jika ada)
+Sitemap: https://digitalpresisi.site/sitemap.xml
