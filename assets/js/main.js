@@ -185,3 +185,99 @@
   window.addEventListener("load", navmenuScrollspy);
   document.addEventListener("scroll", navmenuScrollspy);
 })();
+
+// WhatsApp Floating Button dengan Auto Popup
+document.addEventListener('DOMContentLoaded', function() {
+  const waCard = document.getElementById('waCard');
+  const closeBtn = document.getElementById('closeCard');
+  
+  let popupTimer;
+  let hideTimer;
+  
+  // Fungsi untuk menampilkan card
+  function showCard() {
+    waCard.classList.add('show');
+    
+    // Clear timer hide sebelumnya jika ada
+    if (hideTimer) {
+      clearTimeout(hideTimer);
+    }
+    
+    // Set timer untuk hide setelah 5 detik
+    hideTimer = setTimeout(() => {
+      waCard.classList.remove('show');
+    }, 5000);
+  }
+  
+  // Fungsi untuk menyembunyikan card
+  function hideCard() {
+    waCard.classList.remove('show');
+    
+    // Clear timer hide
+    if (hideTimer) {
+      clearTimeout(hideTimer);
+    }
+  }
+  
+  // Tampilkan card setelah 2 detik
+  popupTimer = setTimeout(showCard, 2000);
+  
+  // Event listeners
+  closeBtn.addEventListener('click', function(e) {
+    e.stopPropagation();
+    hideCard();
+  });
+  
+  // Hover pada tombol WA
+  const waButton = document.getElementById('waButton');
+  
+  waButton.addEventListener('mouseenter', function() {
+    // Jika mouse masuk ke tombol, cancel timer hide
+    if (hideTimer) {
+      clearTimeout(hideTimer);
+    }
+    showCard();
+  });
+  
+  waButton.addEventListener('mouseleave', function() {
+    // Jika mouse keluar, hide setelah 2 detik
+    hideTimer = setTimeout(() => {
+      waCard.classList.remove('show');
+    }, 2000);
+  });
+  
+  // Hover pada card
+  waCard.addEventListener('mouseenter', function() {
+    // Jika mouse masuk ke card, cancel timer hide
+    if (hideTimer) {
+      clearTimeout(hideTimer);
+    }
+  });
+  
+  waCard.addEventListener('mouseleave', function() {
+    // Jika mouse keluar dari card, hide setelah 2 detik
+    hideTimer = setTimeout(() => {
+      waCard.classList.remove('show');
+    }, 2000);
+  });
+  
+  // Reset timer saat scroll (opsional)
+  window.addEventListener('scroll', function() {
+    // Reset timer jika card sedang show
+    if (waCard.classList.contains('show')) {
+      if (hideTimer) {
+        clearTimeout(hideTimer);
+      }
+      hideTimer = setTimeout(() => {
+        waCard.classList.remove('show');
+      }, 5000);
+    }
+  });
+  
+  // Tampilkan ulang setelah 30 detik jika user tidak interaksi
+  setInterval(function() {
+    if (!waCard.classList.contains('show')) {
+      showCard();
+    }
+  }, 30000); // 30 detik
+});
