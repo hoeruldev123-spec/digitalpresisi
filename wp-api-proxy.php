@@ -3,7 +3,7 @@
 header('Content-Type: application/json');
 header('Access-Control-Allow-Origin: *');
 
-$api_url = 'https://digitalpresisi.com/blog/wp-json/wp/v2/posts?per_page=3&_embed';
+$api_url = 'https://digitalpresisi.com/blog/index.php?rest_route=/wp/v2/posts?per_page=3&_embed';
 
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, $api_url);
