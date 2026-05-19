@@ -1100,15 +1100,22 @@ section,
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 120px; 
+  padding: 10px;
   overflow: hidden;
 }
 
 .clients .client-logo img {
-  padding: 20px 40px;
-  max-width: 90%;
+  max-width: 100%;
+  max-height: 80px; /* batas tinggi logo */
+  width: auto;
+  height: auto;
+  object-fit: contain;
+
+  padding: 10px 20px;
   transition: 0.3s;
   opacity: 0.5;
-  filter: grayscale(100);
+  filter: grayscale(100%);
 }
 
 .clients .client-logo img:hover {
