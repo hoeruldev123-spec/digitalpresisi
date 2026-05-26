@@ -1,5 +1,11 @@
+<?php
+// Panggil data portfolio di bagian paling atas file
+require_once 'portfolio-data.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
@@ -11,12 +17,12 @@
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..400&display=swap" rel="stylesheet" />
 
-   <!-- Vendor CSS Files -->
-    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
-    <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
-    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
-    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
 
   <style>
     /* ============================
@@ -24,24 +30,25 @@
        Bright base + dark ink accents
     ============================ */
     :root {
-      --cream:        #F7F4EE;
-      --white:        #FFFFFF;
-      --ink:          #0D0F12;
-      --ink-80:       rgba(13,15,18,0.8);
-      --ink-10:       rgba(13,15,18,0.06);
-      --lime:         #C8F135;  /* electric accent */
-      --lime-dark:    #A8CC1A;
-      --coral:        #FF5733;
-      --gold:         #E8A838;
-      --sidebar-bg:   #0D0F12;
-      --sidebar-w:    290px;
+      --cream: #F7F4EE;
+      --white: #FFFFFF;
+      --ink: #0D0F12;
+      --ink-80: rgba(13, 15, 18, 0.8);
+      --ink-10: rgba(13, 15, 18, 0.06);
+      --lime: #C8F135;
+      /* electric accent */
+      --lime-dark: #A8CC1A;
+      --coral: #FF5733;
+      --gold: #E8A838;
+      --sidebar-bg: #0D0F12;
+      --sidebar-w: 290px;
 
-      --nav-color:    rgba(255,255,255,0.55);
-      --nav-hover:    #FFFFFF;
-      --nav-active:   var(--lime);
+      --nav-color: rgba(255, 255, 255, 0.55);
+      --nav-hover: #FFFFFF;
+      --nav-active: var(--lime);
 
       --heading-font: 'Bricolage Grotesque', sans-serif;
-      --body-font:    'DM Sans', sans-serif;
+      --body-font: 'DM Sans', sans-serif;
       --r-sm: 12px;
       --r-md: 20px;
       --r-lg: 32px;
@@ -49,7 +56,13 @@
       scroll-behavior: smooth;
     }
 
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     body {
       font-family: var(--body-font);
@@ -58,19 +71,30 @@
       line-height: 1.6;
     }
 
-    h1,h2,h3,h4,h5,h6 {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
       font-family: var(--heading-font);
       letter-spacing: -0.03em;
     }
 
-    a { text-decoration: none; color: inherit; transition: color 0.2s; }
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: color 0.2s;
+    }
 
     /* ============================
        SIDEBAR / HEADER
     ============================ */
     .header {
       position: fixed;
-      top: 0; left: 0; bottom: 0;
+      top: 0;
+      left: 0;
+      bottom: 0;
       width: var(--sidebar-w);
       background: var(--sidebar-bg);
       z-index: 997;
@@ -83,9 +107,18 @@
       transition: left 0.3s ease;
     }
 
-    .header::-webkit-scrollbar { width: 4px; }
-    .header::-webkit-scrollbar-track { background: transparent; }
-    .header::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 4px; }
+    .header::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    .header::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    .header::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 4px;
+    }
 
     /* Top accent strip */
     .header::before {
@@ -112,17 +145,26 @@
 
     .header .avail-dot {
       position: absolute;
-      width: 14px; height: 14px;
+      width: 14px;
+      height: 14px;
       background: var(--lime);
       border: 2px solid var(--sidebar-bg);
       border-radius: 50%;
-      bottom: 4px; left: 100px;
+      bottom: 4px;
+      left: 100px;
       animation: pulse-dot 2s infinite;
     }
 
     @keyframes pulse-dot {
-      0%,100% { box-shadow: 0 0 0 0 rgba(200,241,53,0.5); }
-      50% { box-shadow: 0 0 0 6px rgba(200,241,53,0); }
+
+      0%,
+      100% {
+        box-shadow: 0 0 0 0 rgba(200, 241, 53, 0.5);
+      }
+
+      50% {
+        box-shadow: 0 0 0 6px rgba(200, 241, 53, 0);
+      }
     }
 
     .header .sitename {
@@ -135,7 +177,7 @@
     }
 
     .header .tagline {
-      color: rgba(255,255,255,0.4);
+      color: rgba(255, 255, 255, 0.4);
       font-size: 12px;
       padding: 0 28px 18px;
       letter-spacing: 0.03em;
@@ -144,7 +186,7 @@
 
     .header .divider {
       height: 1px;
-      background: rgba(255,255,255,0.07);
+      background: rgba(255, 255, 255, 0.07);
       margin: 0 28px 20px;
     }
 
@@ -155,11 +197,14 @@
     }
 
     .header .social-links a {
-      width: 36px; height: 36px;
+      width: 36px;
+      height: 36px;
       border-radius: 10px;
-      background: rgba(255,255,255,0.06);
-      color: rgba(255,255,255,0.5);
-      display: flex; align-items: center; justify-content: center;
+      background: rgba(255, 255, 255, 0.06);
+      color: rgba(255, 255, 255, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
       font-size: 15px;
       transition: all 0.2s;
     }
@@ -196,7 +241,10 @@
       white-space: nowrap;
     }
 
-    .navmenu a .navicon { font-size: 17px; opacity: 0.6; }
+    .navmenu a .navicon {
+      font-size: 17px;
+      opacity: 0.6;
+    }
 
     .navmenu a:hover,
     .navmenu .active,
@@ -236,32 +284,49 @@
     .header-toggle {
       display: none;
       position: fixed;
-      top: 14px; right: 14px;
+      top: 14px;
+      right: 14px;
       z-index: 9999;
-      width: 42px; height: 42px;
+      width: 42px;
+      height: 42px;
       background: var(--ink);
       color: var(--lime);
       border-radius: var(--r-sm);
       font-size: 20px;
-      align-items: center; justify-content: center;
+      align-items: center;
+      justify-content: center;
       cursor: pointer;
     }
 
     @media (max-width: 1199px) {
-      .header-toggle { display: flex; }
-      .header { left: calc(-1 * var(--sidebar-w)); }
-      .header.header-show { left: 0; box-shadow: 8px 0 40px rgba(0,0,0,0.3); }
+      .header-toggle {
+        display: flex;
+      }
+
+      .header {
+        left: calc(-1 * var(--sidebar-w));
+      }
+
+      .header.header-show {
+        left: 0;
+        box-shadow: 8px 0 40px rgba(0, 0, 0, 0.3);
+      }
     }
 
     @media (min-width: 1200px) {
-      .header ~ main,
-      .header ~ #footer { margin-left: var(--sidebar-w); }
+
+      .header~main,
+      .header~#footer {
+        margin-left: var(--sidebar-w);
+      }
     }
 
     /* ============================
        MAIN LAYOUT
     ============================ */
-    main.main { min-height: 100vh; }
+    main.main {
+      min-height: 100vh;
+    }
 
     section {
       padding: 72px 0;
@@ -291,7 +356,7 @@
     }
 
     .section-title p {
-      color: rgba(13,15,18,0.55);
+      color: rgba(13, 15, 18, 0.55);
       font-size: 16px;
       margin-top: 10px;
       max-width: 520px;
@@ -310,18 +375,22 @@
     #hero::before {
       content: '';
       position: absolute;
-      top: -120px; right: -80px;
-      width: 500px; height: 500px;
-      background: radial-gradient(circle, rgba(200,241,53,0.22) 0%, transparent 65%);
+      top: -120px;
+      right: -80px;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(200, 241, 53, 0.22) 0%, transparent 65%);
       pointer-events: none;
     }
 
     #hero::after {
       content: '';
       position: absolute;
-      bottom: -80px; left: 20%;
-      width: 300px; height: 300px;
-      background: radial-gradient(circle, rgba(255,87,51,0.1) 0%, transparent 65%);
+      bottom: -80px;
+      left: 20%;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(255, 87, 51, 0.1) 0%, transparent 65%);
       pointer-events: none;
     }
 
@@ -340,17 +409,35 @@
     }
 
     .hero-badge .dot {
-      width: 7px; height: 7px;
+      width: 7px;
+      height: 7px;
       background: var(--ink);
       border-radius: 50%;
       animation: blink 1.4s infinite;
     }
 
-    @keyframes blink { 0%,100%{opacity:1}50%{opacity:0.2} }
+    @keyframes blink {
+
+      0%,
+      100% {
+        opacity: 1
+      }
+
+      50% {
+        opacity: 0.2
+      }
+    }
 
     @keyframes badge-enter {
-      from { opacity: 0; transform: translateY(12px); }
-      to   { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .hero-name {
@@ -370,7 +457,9 @@
     .hero-name span::after {
       content: '';
       position: absolute;
-      bottom: 4px; left: 0; right: 0;
+      bottom: 4px;
+      left: 0;
+      right: 0;
       height: 10px;
       background: var(--lime);
       z-index: -1;
@@ -379,15 +468,26 @@
 
     .hero-role {
       font-size: clamp(1.1rem, 2.5vw, 1.5rem);
-      color: rgba(13,15,18,0.55);
+      color: rgba(13, 15, 18, 0.55);
       font-weight: 400;
       margin-bottom: 36px;
     }
 
-    .hero-role .typed { color: var(--ink); font-weight: 600; }
-    .typed-cursor { color: var(--lime); font-weight: 300; }
+    .hero-role .typed {
+      color: var(--ink);
+      font-weight: 600;
+    }
 
-    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .typed-cursor {
+      color: var(--lime);
+      font-weight: 300;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
 
     .btn-primary-dark {
       background: var(--ink);
@@ -397,7 +497,9 @@
       font-weight: 600;
       font-size: 14px;
       border: 2px solid var(--ink);
-      display: inline-flex; align-items: center; gap: 7px;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
       transition: all 0.2s;
     }
 
@@ -413,8 +515,10 @@
       border-radius: var(--r-md);
       font-weight: 600;
       font-size: 14px;
-      border: 2px solid rgba(13,15,18,0.2);
-      display: inline-flex; align-items: center; gap: 7px;
+      border: 2px solid rgba(13, 15, 18, 0.2);
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
       transition: all 0.2s;
     }
 
@@ -425,7 +529,9 @@
 
     /* floating tag chips */
     .hero-chips {
-      display: flex; gap: 8px; flex-wrap: wrap;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
       margin-top: 36px;
     }
 
@@ -434,9 +540,9 @@
       font-weight: 500;
       padding: 5px 14px;
       border-radius: 100px;
-      background: rgba(13,15,18,0.07);
+      background: rgba(13, 15, 18, 0.07);
       color: var(--ink);
-      border: 1px solid rgba(13,15,18,0.1);
+      border: 1px solid rgba(13, 15, 18, 0.1);
     }
 
     /* ============================
@@ -459,7 +565,8 @@
 
     .about-img-badge {
       position: absolute;
-      bottom: 20px; right: -16px;
+      bottom: 20px;
+      right: -16px;
       background: var(--ink);
       color: #fff;
       padding: 14px 18px;
@@ -468,7 +575,7 @@
       font-weight: 600;
       font-family: var(--heading-font);
       text-align: center;
-      box-shadow: 0 12px 28px rgba(0,0,0,0.18);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
       line-height: 1.3;
     }
 
@@ -496,7 +603,7 @@
       font-size: 11px;
       text-transform: uppercase;
       letter-spacing: 0.08em;
-      color: rgba(13,15,18,0.4);
+      color: rgba(13, 15, 18, 0.4);
       margin-bottom: 3px;
       font-weight: 600;
     }
@@ -511,7 +618,7 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      background: rgba(200,241,53,0.2);
+      background: rgba(200, 241, 53, 0.2);
       border: 1px solid var(--lime);
       color: #4a6000;
       padding: 3px 12px 3px 8px;
@@ -522,7 +629,8 @@
 
     .avail-badge::before {
       content: '';
-      width: 7px; height: 7px;
+      width: 7px;
+      height: 7px;
       background: var(--lime-dark);
       border-radius: 50%;
     }
@@ -537,15 +645,17 @@
 
     .stats-grid {
       display: grid;
-      grid-template-columns: repeat(4,1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 1px;
-      background: rgba(255,255,255,0.07);
+      background: rgba(255, 255, 255, 0.07);
       border-radius: var(--r-lg);
       overflow: hidden;
     }
 
     @media (max-width: 767px) {
-      .stats-grid { grid-template-columns: repeat(2,1fr); }
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
 
     .stat-card {
@@ -555,7 +665,9 @@
       transition: background 0.2s;
     }
 
-    .stat-card:hover { background: rgba(255,255,255,0.03); }
+    .stat-card:hover {
+      background: rgba(255, 255, 255, 0.03);
+    }
 
     .stat-card .stat-num {
       font-family: var(--heading-font);
@@ -568,12 +680,15 @@
 
     .stat-card .stat-label {
       font-size: 13px;
-      color: rgba(255,255,255,0.45);
+      color: rgba(255, 255, 255, 0.45);
       margin-top: 6px;
       font-weight: 500;
     }
 
-    .stat-card .stat-label strong { color: rgba(255,255,255,0.8); display: block; }
+    .stat-card .stat-label strong {
+      color: rgba(255, 255, 255, 0.8);
+      display: block;
+    }
 
     /* ============================
        SKILLS
@@ -584,7 +699,7 @@
 
     .skills-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(110px,1fr));
+      grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
       gap: 12px;
       margin-top: 36px;
     }
@@ -594,20 +709,21 @@
       border-radius: var(--r-md);
       padding: 20px 12px 14px;
       text-align: center;
-      border: 1.5px solid rgba(13,15,18,0.06);
-      transition: all 0.22s cubic-bezier(0.2,0,0,1);
+      border: 1.5px solid rgba(13, 15, 18, 0.06);
+      transition: all 0.22s cubic-bezier(0.2, 0, 0, 1);
       cursor: default;
     }
 
     .skill-card:hover {
       border-color: var(--lime);
-      background: rgba(200,241,53,0.08);
+      background: rgba(200, 241, 53, 0.08);
       transform: translateY(-4px);
-      box-shadow: 0 8px 20px rgba(200,241,53,0.15);
+      box-shadow: 0 8px 20px rgba(200, 241, 53, 0.15);
     }
 
     .skill-card img {
-      width: 44px; height: 44px;
+      width: 44px;
+      height: 44px;
       object-fit: contain;
     }
 
@@ -621,14 +737,16 @@
     /* ============================
        RESUME
     ============================ */
-    #resume { background: var(--white); }
+    #resume {
+      background: var(--white);
+    }
 
     .resume-col-title {
       font-size: 13px;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.1em;
-      color: rgba(13,15,18,0.4);
+      color: rgba(13, 15, 18, 0.4);
       margin-bottom: 20px;
       display: flex;
       align-items: center;
@@ -639,26 +757,31 @@
       content: '';
       flex: 1;
       height: 1px;
-      background: rgba(13,15,18,0.08);
+      background: rgba(13, 15, 18, 0.08);
     }
 
     .resume-item {
       position: relative;
       padding: 0 0 28px 22px;
-      border-left: 2px solid rgba(13,15,18,0.1);
+      border-left: 2px solid rgba(13, 15, 18, 0.1);
     }
 
     .resume-item::before {
       content: '';
       position: absolute;
-      left: -7px; top: 4px;
-      width: 12px; height: 12px;
+      left: -7px;
+      top: 4px;
+      width: 12px;
+      height: 12px;
       background: var(--lime);
       border: 2px solid var(--ink);
       border-radius: 50%;
     }
 
-    .resume-item:last-child { padding-bottom: 0; border-left-color: transparent; }
+    .resume-item:last-child {
+      padding-bottom: 0;
+      border-left-color: transparent;
+    }
 
     .resume-item .ri-org {
       font-size: 16px;
@@ -681,7 +804,7 @@
 
     .resume-item .ri-sub {
       font-size: 13px;
-      color: rgba(13,15,18,0.5);
+      color: rgba(13, 15, 18, 0.5);
       font-style: italic;
       margin-bottom: 6px;
     }
@@ -689,10 +812,12 @@
     .resume-item ul {
       padding-left: 16px;
       font-size: 13.5px;
-      color: rgba(13,15,18,0.65);
+      color: rgba(13, 15, 18, 0.65);
     }
 
-    .resume-item ul li { margin-bottom: 4px; }
+    .resume-item ul li {
+      margin-bottom: 4px;
+    }
 
     /* ============================
        PORTFOLIO
@@ -718,7 +843,7 @@
       cursor: pointer;
       background: var(--white);
       color: var(--ink);
-      border: 1.5px solid rgba(13,15,18,0.1);
+      border: 1.5px solid rgba(13, 15, 18, 0.1);
       transition: all 0.2s;
       user-select: none;
     }
@@ -739,7 +864,8 @@
     }
 
     .portfolio-content img {
-      width: 100%; height: 100%;
+      width: 100%;
+      height: 100%;
       object-fit: cover;
       transition: transform 0.5s ease;
     }
@@ -747,7 +873,7 @@
     .portfolio-info {
       position: absolute;
       inset: 0;
-      background: linear-gradient(to top, rgba(13,15,18,0.88) 40%, rgba(13,15,18,0.1) 100%);
+      background: linear-gradient(to top, rgba(13, 15, 18, 0.88) 40%, rgba(13, 15, 18, 0.1) 100%);
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
@@ -756,8 +882,13 @@
       transition: opacity 0.3s ease;
     }
 
-    .portfolio-content:hover .portfolio-info { opacity: 1; }
-    .portfolio-content:hover img { transform: scale(1.05); }
+    .portfolio-content:hover .portfolio-info {
+      opacity: 1;
+    }
+
+    .portfolio-content:hover img {
+      transform: scale(1.05);
+    }
 
     .portfolio-info h4 {
       font-size: 15px;
@@ -770,23 +901,29 @@
 
     .portfolio-info p {
       font-size: 12px;
-      color: rgba(255,255,255,0.6);
+      color: rgba(255, 255, 255, 0.6);
       margin: 0;
     }
 
     .portfolio-info .preview-link {
       position: absolute;
-      top: 14px; right: 14px;
-      width: 38px; height: 38px;
+      top: 14px;
+      right: 14px;
+      width: 38px;
+      height: 38px;
       background: var(--lime);
       color: var(--ink);
       border-radius: 10px;
-      display: flex; align-items: center; justify-content: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       font-size: 17px;
       transition: transform 0.2s;
     }
 
-    .portfolio-info .preview-link:hover { transform: scale(1.1); }
+    .portfolio-info .preview-link:hover {
+      transform: scale(1.1);
+    }
 
     /* ============================
        FOOTER
@@ -798,15 +935,17 @@
     }
 
     #footer .copyright {
-      color: rgba(255,255,255,0.4);
+      color: rgba(255, 255, 255, 0.4);
       font-size: 13px;
     }
 
-    #footer .copyright strong { color: var(--lime); }
+    #footer .copyright strong {
+      color: var(--lime);
+    }
 
     #footer .footer-tagline {
       font-size: 12px;
-      color: rgba(255,255,255,0.2);
+      color: rgba(255, 255, 255, 0.2);
       margin-top: 6px;
     }
 
@@ -815,40 +954,67 @@
     ============================ */
     .scroll-top {
       position: fixed;
-      bottom: 24px; right: 24px;
-      width: 44px; height: 44px;
+      bottom: 24px;
+      right: 24px;
+      width: 44px;
+      height: 44px;
       background: var(--lime);
       color: var(--ink);
       border-radius: var(--r-sm);
       font-size: 20px;
-      display: flex; align-items: center; justify-content: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       z-index: 998;
       opacity: 0;
       pointer-events: none;
       transition: all 0.3s;
-      box-shadow: 0 4px 16px rgba(200,241,53,0.3);
+      box-shadow: 0 4px 16px rgba(200, 241, 53, 0.3);
     }
 
-    .scroll-top.active { opacity: 1; pointer-events: all; }
-    .scroll-top:hover { background: var(--lime-dark); transform: translateY(-2px); }
+    .scroll-top.active {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .scroll-top:hover {
+      background: var(--lime-dark);
+      transform: translateY(-2px);
+    }
 
     /* ============================
        AOS OVERRIDE
     ============================ */
-    [data-aos] { will-change: transform, opacity; }
+    [data-aos] {
+      will-change: transform, opacity;
+    }
 
     /* ============================
        RESPONSIVE TWEAKS
     ============================ */
     @media (max-width: 991px) {
-      .about-img-badge { right: 12px; bottom: 12px; }
-      .about-info-grid { grid-template-columns: 1fr; }
+      .about-img-badge {
+        right: 12px;
+        bottom: 12px;
+      }
+
+      .about-info-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
     @media (max-width: 767px) {
-      #hero { padding: 60px 0 48px; }
-      .hero-name { font-size: 2.8rem; }
-      section { padding: 56px 0; }
+      #hero {
+        padding: 60px 0 48px;
+      }
+
+      .hero-name {
+        font-size: 2.8rem;
+      }
+
+      section {
+        padding: 56px 0;
+      }
     }
   </style>
 </head>
@@ -856,7 +1022,6 @@
 
 <body class="index-page">
 
-  
   <!-- Mobile toggle -->
   <i class="header-toggle d-xl-none bi bi-list" id="headerToggle"></i>
 
@@ -1031,21 +1196,51 @@
         </div>
 
         <div class="skills-grid" data-aos="fade-up" data-aos-delay="100">
-          <div class="skill-card"><img src="assets/img/icon/html-5-svgrepo-com.svg" alt="html"/><p>HTML5</p></div>
-          <div class="skill-card"><img src="assets/img/icon/css-3-svgrepo-com.svg" alt="css"/><p>CSS3</p></div>
-          <div class="skill-card"><img src="assets/img/icon/javascript-svgrepo-com.svg" alt="js"/><p>JavaScript</p></div>
-          <div class="skill-card"><img src="assets/img/icon/php-svgrepo-com.svg" alt="php"/><p>PHP</p></div>
-          <div class="skill-card"><img src="assets/img/icon/bootstrap-5-1.svg" alt="bootstrap"/><p>Bootstrap</p></div>
-          <div class="skill-card"><img src="assets/img/icon/mysql-logo-svgrepo-com.svg" alt="mysql"/><p>MySQL</p></div>
-          <div class="skill-card"><img src="assets/img/icon/cpp.svg" alt="cpp"/><p>C++</p></div>
-          <div class="skill-card"><img src="assets/img/icon/git-svgrepo-com.svg" alt="git"/><p>Git</p></div>
-          <div class="skill-card"><img src="assets/img/icon/github-icon.svg" alt="github"/><p>GitHub</p></div>
-          <div class="skill-card"><img src="assets/img/icon/laravel-svgrepo-com.svg" alt="laravel"/><p>Laravel</p></div>
-          <div class="skill-card"><img src="assets/img/icon/react-svgrepo-com.svg" alt="react"/><p>React</p></div>
-          <div class="skill-card"><img src="assets/img/icon/wordpress-svgrepo-com.svg" alt="wordpress"/><p>WordPress</p></div>
-          <div class="skill-card"><img src="assets/img/icon/figma.svg" alt="figma"/><p>Figma</p></div>
-          <div class="skill-card"><img src="assets/img/icon/adobe-illustrator-svgrepo-com.svg" alt="illustrator"/><p>Illustrator</p></div>
-          <div class="skill-card"><img src="assets/img/icon/photoshop-svgrepo-com.svg" alt="photoshop"/><p>Photoshop</p></div>
+          <div class="skill-card"><img src="assets/img/icon/html-5-svgrepo-com.svg" alt="html" />
+            <p>HTML5</p>
+          </div>
+          <div class="skill-card"><img src="assets/img/icon/css-3-svgrepo-com.svg" alt="css" />
+            <p>CSS3</p>
+          </div>
+          <div class="skill-card"><img src="assets/img/icon/javascript-svgrepo-com.svg" alt="js" />
+            <p>JavaScript</p>
+          </div>
+          <div class="skill-card"><img src="assets/img/icon/php-svgrepo-com.svg" alt="php" />
+            <p>PHP</p>
+          </div>
+          <div class="skill-card"><img src="assets/img/icon/bootstrap-5-1.svg" alt="bootstrap" />
+            <p>Bootstrap</p>
+          </div>
+          <div class="skill-card"><img src="assets/img/icon/mysql-logo-svgrepo-com.svg" alt="mysql" />
+            <p>MySQL</p>
+          </div>
+          <div class="skill-card"><img src="assets/img/icon/cpp.svg" alt="cpp" />
+            <p>C++</p>
+          </div>
+          <div class="skill-card"><img src="assets/img/icon/git-svgrepo-com.svg" alt="git" />
+            <p>Git</p>
+          </div>
+          <div class="skill-card"><img src="assets/img/icon/github-icon.svg" alt="github" />
+            <p>GitHub</p>
+          </div>
+          <div class="skill-card"><img src="assets/img/icon/laravel-svgrepo-com.svg" alt="laravel" />
+            <p>Laravel</p>
+          </div>
+          <div class="skill-card"><img src="assets/img/icon/react-svgrepo-com.svg" alt="react" />
+            <p>React</p>
+          </div>
+          <div class="skill-card"><img src="assets/img/icon/wordpress-svgrepo-com.svg" alt="wordpress" />
+            <p>WordPress</p>
+          </div>
+          <div class="skill-card"><img src="assets/img/icon/figma.svg" alt="figma" />
+            <p>Figma</p>
+          </div>
+          <div class="skill-card"><img src="assets/img/icon/adobe-illustrator-svgrepo-com.svg" alt="illustrator" />
+            <p>Illustrator</p>
+          </div>
+          <div class="skill-card"><img src="assets/img/icon/photoshop-svgrepo-com.svg" alt="photoshop" />
+            <p>Photoshop</p>
+          </div>
         </div>
       </div>
     </section>
@@ -1133,45 +1328,45 @@
 
     <!-- PORTFOLIO -->
     <section id="portfolio" class="portfolio section">
-  <div class="container">
-    <div data-aos="fade-up" style="margin-bottom:4px;">
-      <span class="section-label"><i class="bi bi-grid-3x3-gap-fill"></i> Portfolio</span>
-      <h2 style="font-family:var(--heading-font);font-size:clamp(1.8rem,3vw,2.5rem);font-weight:800;letter-spacing:-0.04em;">
-        Proyek Unggulan
-      </h2>
-      <p style="color:rgba(13,15,18,0.5);font-size:14px;margin-top:8px;">Website, branding, logo &amp; design system yang menonjol.</p>
-    </div>
+      <div class="container">
+        <div data-aos="fade-up" style="margin-bottom:4px;">
+          <span class="section-label"><i class="bi bi-grid-3x3-gap-fill"></i> Portfolio</span>
+          <h2 style="font-family:var(--heading-font);font-size:clamp(1.8rem,3vw,2.5rem);font-weight:800;letter-spacing:-0.04em;">
+            Proyek Unggulan
+          </h2>
+          <p style="color:rgba(13,15,18,0.5);font-size:14px;margin-top:8px;">Website, branding, logo &amp; design system yang menonjol.</p>
+        </div>
 
-    <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
-      
-      <ul class="portfolio-filters isotope-filters" data-aos="fade-up">
-        <?php foreach ($portfolio_categories as $filter => $name): ?>
-          <li data-filter="<?php echo $filter; ?>" class="<?php echo ($filter === '*') ? 'filter-active' : ''; ?>">
-            <?php echo htmlspecialchars($name); ?>
-          </li>
-        <?php <?php endforeach; ?> ?>
-      </ul>
+        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
 
-      <div class="row gy-4 isotope-container" data-aos="fade-up">
-        <?php foreach ($portfolio_items as $item): ?>
-          <div class="col-lg-4 col-md-6 portfolio-item isotope-item <?php echo htmlspecialchars($item['category']); ?>">
-            <div class="portfolio-content">
-              <img src="<?php echo htmlspecialchars($item['image']); ?>" class="img-fluid" alt="<?php echo htmlspecialchars($item['title']); ?>" />
-              <div class="portfolio-info">
-                <a href="<?php echo htmlspecialchars($item['image']); ?>" data-gallery="portfolio-gallery" class="glightbox preview-link">
-                  <i class="bi bi-zoom-in"></i>
-                </a>
-                <h4><?php echo htmlspecialchars($item['title']); ?></h4>
-                <p><?php echo htmlspecialchars($item['sub']); ?></p>
+          <ul class="portfolio-filters isotope-filters" data-aos="fade-up">
+            <?php foreach ($portfolio_categories as $filter => $name): ?>
+              <li data-filter="<?php echo $filter; ?>" class="<?php echo ($filter === '*') ? 'filter-active' : ''; ?>">
+                <?php echo htmlspecialchars($name); ?>
+              </li>
+            <?php endforeach; ?>
+          </ul>
+
+          <div class="row gy-4 isotope-container" data-aos="fade-up">
+            <?php foreach ($portfolio_items as $item): ?>
+              <div class="col-lg-4 col-md-6 portfolio-item isotope-item <?php echo htmlspecialchars($item['category']); ?>">
+                <div class="portfolio-content">
+                  <img src="<?php echo htmlspecialchars($item['image']); ?>" class="img-fluid" alt="<?php echo htmlspecialchars($item['title']); ?>" />
+                  <div class="portfolio-info">
+                    <a href="<?php echo htmlspecialchars($item['image']); ?>" data-gallery="portfolio-gallery" class="glightbox preview-link">
+                      <i class="bi bi-zoom-in"></i>
+                    </a>
+                    <h4><?php echo htmlspecialchars($item['title']); ?></h4>
+                    <p><?php echo htmlspecialchars($item['sub']); ?></p>
+                  </div>
+                </div>
               </div>
-            </div>
+            <?php endforeach; ?>
           </div>
-        <?php endforeach; ?>
-      </div>
 
-    </div>
-  </div>
-</section>
+        </div>
+      </div>
+    </section>
 
   </main>
 
@@ -1219,24 +1414,31 @@
     });
   </script>
 
- <!-- Vendor JS Files -->
-    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/vendor/php-email-form/validate.js"></script>
-    <script src="assets/vendor/aos/aos.js"></script>
-    <script src="assets/vendor/typed.js/typed.umd.js"></script>
-    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-    <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-    <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
 
-    <!-- Main JS File -->
-    <script src="assets/js/profile.js"></script>
+  <!-- Main JS File -->
+  <script src="assets/js/profile.js"></script>
   <script>
-    AOS.init({ duration: 650, once: true, easing: 'ease-out-cubic' });
+    AOS.init({
+      duration: 650,
+      once: true,
+      easing: 'ease-out-cubic'
+    });
     new PureCounter();
-    const lightbox = GLightbox({ selector: '.glightbox' });
+    const lightbox = GLightbox({
+      selector: '.glightbox'
+    });
   </script>
 </body>
+
 </html>

@@ -1,5 +1,6 @@
 <?php
-// 1. Data Kategori untuk Filter Tab
+// portfolio-data.php
+
 $portfolio_categories = [
     '*'               => 'All Work',
     '.filter-website'  => 'Website',
@@ -8,7 +9,6 @@ $portfolio_categories = [
     '.filter-books'    => 'Books / Print'
 ];
 
-// 2. Data Item Portfolio
 $portfolio_items = [
     [
         'title'    => 'Trisula Energi Samudra',
