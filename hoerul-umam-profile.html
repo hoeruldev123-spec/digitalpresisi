@@ -853,8 +853,10 @@
   </style>
 </head>
 
+
 <body class="index-page">
 
+  
   <!-- Mobile toggle -->
   <i class="header-toggle d-xl-none bi bi-list" id="headerToggle"></i>
 
@@ -1131,149 +1133,45 @@
 
     <!-- PORTFOLIO -->
     <section id="portfolio" class="portfolio section">
-      <div class="container">
-        <div data-aos="fade-up" style="margin-bottom:4px;">
-          <span class="section-label"><i class="bi bi-grid-3x3-gap-fill"></i> Portfolio</span>
-          <h2 style="font-family:var(--heading-font);font-size:clamp(1.8rem,3vw,2.5rem);font-weight:800;letter-spacing:-0.04em;">
-            Proyek Unggulan
-          </h2>
-          <p style="color:rgba(13,15,18,0.5);font-size:14px;margin-top:8px;">Website, branding, logo &amp; design system yang menonjol.</p>
-        </div>
+  <div class="container">
+    <div data-aos="fade-up" style="margin-bottom:4px;">
+      <span class="section-label"><i class="bi bi-grid-3x3-gap-fill"></i> Portfolio</span>
+      <h2 style="font-family:var(--heading-font);font-size:clamp(1.8rem,3vw,2.5rem);font-weight:800;letter-spacing:-0.04em;">
+        Proyek Unggulan
+      </h2>
+      <p style="color:rgba(13,15,18,0.5);font-size:14px;margin-top:8px;">Website, branding, logo &amp; design system yang menonjol.</p>
+    </div>
 
-        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
-          <ul class="portfolio-filters isotope-filters" data-aos="fade-up">
-            <li data-filter="*" class="filter-active">All Work</li>
-            <li data-filter=".filter-website">Website</li>
-            <li data-filter=".filter-product">Logo</li>
-            <li data-filter=".filter-branding">Branding</li>
-            <li data-filter=".filter-books">Books / Print</li>
-          </ul>
+    <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+      
+      <ul class="portfolio-filters isotope-filters" data-aos="fade-up">
+        <?php foreach ($portfolio_categories as $filter => $name): ?>
+          <li data-filter="<?php echo $filter; ?>" class="<?php echo ($filter === '*') ? 'filter-active' : ''; ?>">
+            <?php echo htmlspecialchars($name); ?>
+          </li>
+        <?php <?php endforeach; ?> ?>
+      </ul>
 
-          <div class="row gy-4 isotope-container" data-aos="fade-up">
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-website">
-              <div class="portfolio-content">
-                <img src="assets/img/portfolio/app-1.jpg" class="img-fluid" alt="Trisula Energi Samudra" />
-                <div class="portfolio-info">
-                  <a href="assets/img/portfolio/app-1.jpg" data-gallery="portfolio-gallery" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <h4>Trisula Energi Samudra</h4>
-                  <p>Energy Corporate Website</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-website">
-              <div class="portfolio-content">
-                <img src="assets/img/portfolio/app-4.jpg" class="img-fluid" alt="Gereja ST Andreas Kedoya" />
-                <div class="portfolio-info">
-                  <a href="assets/img/portfolio/app-4.jpg" data-gallery="portfolio-gallery" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <h4>Gereja ST Andreas Kedoya</h4>
-                  <p>Religious CMS website</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-website">
-              <div class="portfolio-content">
-                <img src="assets/img/portfolio/app-5.jpg" class="img-fluid" alt="ADI Analytics" />
-                <div class="portfolio-info">
-                  <a href="assets/img/portfolio/app-5.jpg" data-gallery="portfolio-gallery" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <h4>ADI Analytics</h4>
-                  <p>Data Startup Landing</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-website">
-              <div class="portfolio-content">
-                <img src="assets/img/portfolio/app-6.jpg" class="img-fluid" alt="Trisula Tambang" />
-                <div class="portfolio-info">
-                  <a href="assets/img/portfolio/app-6.jpg" data-gallery="portfolio-gallery" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <h4>Trisula Tambang</h4>
-                  <p>Industrial Profile</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <div class="portfolio-content">
-                <img src="assets/img/portfolio/product-1.jpg" class="img-fluid" alt="Nusantara Logomark" />
-                <div class="portfolio-info">
-                  <a href="assets/img/portfolio/product-1.jpg" data-gallery="portfolio-gallery" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <h4>Nusantara Logomark</h4>
-                  <p>Modern identity</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-website">
-              <div class="portfolio-content">
-                <img src="assets/img/portfolio/app-3.jpg" class="img-fluid" alt="Apartemen Malioboro" />
-                <div class="portfolio-info">
-                  <a href="assets/img/portfolio/app-3.jpg" data-gallery="portfolio-gallery" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <h4>Apartemen Malioboro Residence</h4>
-                  <p>Property showcase</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <div class="portfolio-content">
-                <img src="assets/img/portfolio/branding-1.jpg" class="img-fluid" alt="EcoNatura" />
-                <div class="portfolio-info">
-                  <a href="assets/img/portfolio/branding-1.jpg" data-gallery="portfolio-gallery" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <h4>EcoNatura Branding</h4>
-                  <p>Full identity system</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
-              <div class="portfolio-content">
-                <img src="assets/img/portfolio/books-1.jpg" class="img-fluid" alt="Visual Diary Book" />
-                <div class="portfolio-info">
-                  <a href="assets/img/portfolio/books-1.jpg" data-gallery="portfolio-gallery" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <h4>Visual Diary Book</h4>
-                  <p>Editorial design</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-website">
-              <div class="portfolio-content">
-                <img src="assets/img/portfolio/app-2.jpg" class="img-fluid" alt="Galon Gas Hub" />
-                <div class="portfolio-info">
-                  <a href="assets/img/portfolio/app-2.jpg" data-gallery="portfolio-gallery" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <h4>Galon Gas Hub</h4>
-                  <p>e-commerce solution</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <div class="portfolio-content">
-                <img src="assets/img/portfolio/product-2.jpg" class="img-fluid" alt="Karya Visual Identity" />
-                <div class="portfolio-info">
-                  <a href="assets/img/portfolio/product-2.jpg" data-gallery="portfolio-gallery" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <h4>Karya Visual Identity</h4>
-                  <p>Logo suite</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <div class="portfolio-content">
-                <img src="assets/img/portfolio/branding-2.jpg" class="img-fluid" alt="Artisan Coffee" />
-                <div class="portfolio-info">
-                  <a href="assets/img/portfolio/branding-2.jpg" data-gallery="portfolio-gallery" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <h4>Artisan Coffee Co.</h4>
-                  <p>Brand ecosystem</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-website">
-              <div class="portfolio-content">
-                <img src="assets/img/portfolio/app-7.jpg" class="img-fluid" alt="Makaroni Chuaks" />
-                <div class="portfolio-info">
-                  <a href="assets/img/portfolio/app-7.jpg" data-gallery="portfolio-gallery" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <h4>Makaroni Chuaks</h4>
-                  <p>F&amp;B brand website</p>
-                </div>
+      <div class="row gy-4 isotope-container" data-aos="fade-up">
+        <?php foreach ($portfolio_items as $item): ?>
+          <div class="col-lg-4 col-md-6 portfolio-item isotope-item <?php echo htmlspecialchars($item['category']); ?>">
+            <div class="portfolio-content">
+              <img src="<?php echo htmlspecialchars($item['image']); ?>" class="img-fluid" alt="<?php echo htmlspecialchars($item['title']); ?>" />
+              <div class="portfolio-info">
+                <a href="<?php echo htmlspecialchars($item['image']); ?>" data-gallery="portfolio-gallery" class="glightbox preview-link">
+                  <i class="bi bi-zoom-in"></i>
+                </a>
+                <h4><?php echo htmlspecialchars($item['title']); ?></h4>
+                <p><?php echo htmlspecialchars($item['sub']); ?></p>
               </div>
             </div>
           </div>
-        </div>
+        <?php endforeach; ?>
       </div>
-    </section>
+
+    </div>
+  </div>
+</section>
 
   </main>
 
