@@ -77,7 +77,7 @@
     class="header d-flex align-items-center fixed-top rounded-bottom-3 rounded-bottom-sm-4">
     <div
       class="container-fluid container-xl position-relative d-flex align-items-center">
-      <a href="index.php" class="logo d-flex align-items-center me-auto">
+      <a href="/" class="logo d-flex align-items-center me-auto">
         <img src="assets/img/logo.png" alt="" />
         <h1 class="sitename">Digital Presisi</h1>
       </a>
@@ -1165,7 +1165,7 @@
                     <a href=""><i class="bi bi-instagram"></i></a> -->
                   <a href="https://www.linkedin.com/in/amanda-paramitha-manda" target="_blank" rel="noopener noreferrer" title="Kunjungi Instagram"><i class="bi bi-linkedin"></i></a>
                 </div>
-                <a href="amanda-paramitha-profile.php" class="read-more"><span>Kunjungi Profile</span><i class="bi bi-arrow-right"></i></a>
+                <a href="amanda-paramitha-profile" class="read-more"><span>Kunjungi Profile</span><i class="bi bi-arrow-right"></i></a>
               </div>
             </div>
           </div><!-- End tim Member -->
