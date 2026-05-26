@@ -2,8 +2,9 @@
 // portfolio-data.php
 
 $portfolio_categories = [
-    '*'               => 'All Work',
+    '*'                => 'All Work',
     '.filter-website'  => 'Website',
+    '.filter-apps'     => 'Apps',
     '.filter-product'  => 'Logo',
     '.filter-branding' => 'Branding',
     '.filter-books'    => 'Books / Print'
@@ -34,12 +35,12 @@ $portfolio_items = [
         'image'    => 'assets/img/portfolio/app-6.jpg',
         'category' => 'filter-website'
     ],
-    // [
-    //     'title'    => 'Nusantara Logomark',
-    //     'sub'      => 'Modern identity',
-    //     'image'    => 'assets/img/portfolio/product-1.jpg',
-    //     'category' => 'filter-product'
-    // ],
+    [
+        'title'    => 'Adi Sales-track',
+        'sub'      => 'Apps Monitoring',
+        'image'    => 'assets/img/portfolio/adi-salestrack.webp',
+        'category' => 'filter-apps'
+    ],
     [
         'title'    => 'Apartemen Malioboro Residence',
         'sub'      => 'Property showcase',
