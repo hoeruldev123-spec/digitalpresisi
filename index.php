@@ -1202,7 +1202,7 @@
                     <a href=""><i class="bi bi-instagram"></i></a> -->
                     <a href="https://www.linkedin.com/in/amanda-paramitha-manda" target="_blank" rel="noopener noreferrer" title="Kunjungi Instagram"><i class="bi bi-linkedin"></i></a>
                   </div>
-                  <a href="amanda-paramitha-profile.html" class="read-more"><span>Kunjungi Profile</span><i class="bi bi-arrow-right"></i></a>
+                  <a href="amanda-paramitha-profile.php" class="read-more"><span>Kunjungi Profile</span><i class="bi bi-arrow-right"></i></a>
                 </div>
               </div>
             </div><!-- End tim Member -->
@@ -1221,7 +1221,7 @@
                     <a href="https://www.linkedin.com/in/hoerul-umam/" target="_blank" rel="noopener noreferrer" title="Kunjungi Linkedin"><i class="bi bi-linkedin"></i></a>
                   </div>
                   
-                  <a href="hoerul-umam-profile.html" class="read-more"><span>Kunjungi Profile</span><i class="bi bi-arrow-right"></i></a>
+                  <a href="hoerul-umam-profile.php" class="read-more"><span>Kunjungi Profile</span><i class="bi bi-arrow-right"></i></a>
                   
                 </div>
                
