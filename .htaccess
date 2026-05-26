@@ -1,0 +1,5 @@
+RewriteEngine On
+
+# 2. Redirect 301 dari URL /site/ ke Domain Utama untuk mempertahankan SEO
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /site/(.*)\ HTTP/
+RewriteRule ^(.*)$ https://digitalpresisi.com/%1 [R=301,L]
