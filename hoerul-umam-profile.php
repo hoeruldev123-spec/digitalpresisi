@@ -12,6 +12,10 @@ require_once 'portfolio-data.php';
   <title>Hoerul Umam · Freelance Developer & Creative Technologist</title>
   <meta name="description" content="Hoerul Umam — Freelance Web Developer, Designer & Digital Marketer. Membangun identitas digital modern, cepat, dan berdampak." />
 
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon" />
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect" />
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
